@@ -1,0 +1,341 @@
+:root {
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-light: #9ca3af;
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f8f9fa;
+  --color-bg-gray: #f3f4f6;
+  --color-bg-dark: #111827;
+  --color-border: #e5e7eb;
+  --color-accent: #fdbf00;
+  --color-accent-dark: #c99500;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section-padding {
+  padding: 144px 0;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-bg-dark);
+  color: var(--color-bg-white);
+  padding: 16px 28px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #374151;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid #d1d5db;
+  padding: 16px 28px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-bg-gray);
+}
+
+.overline {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.overline::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.h2-title {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+.h3-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.desc-text {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+@media (max-width: 1024px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+  .h2-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  .h2-title {
+    font-size: 2rem;
+  }
+}
+/* ===== Mobile menu, links & form states (added) ===== */
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+  z-index: 1050;
+}
+.mobile-nav-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(78vw, 320px);
+  background-color: var(--color-bg-white);
+  z-index: 1060;
+  padding: 96px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -8px 0 24px rgba(0,0,0,0.08);
+}
+.mobile-nav.is-open {
+  transform: translateX(0);
+}
+.mobile-nav a {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.mobile-nav a.btn-primary {
+  color: var(--color-bg-white);
+  justify-content: center;
+}
+.mobile-nav .btn-primary {
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+.contact-method a,
+.contact-list a {
+  color: inherit;
+  transition: color 0.3s;
+}
+.contact-method a:hover {
+  color: var(--color-accent-dark);
+}
+.contact-list a:hover {
+  color: var(--color-accent);
+}
+
+.form-feedback {
+  display: none;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid #34d399;
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+.form-feedback.is-error {
+  border-color: #f87171;
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+.form-feedback.is-visible {
+  display: flex;
+}
+.form-feedback-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+}
+.form-feedback-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.form-feedback-text {
+  font-size: 0.875rem;
+}
+.contacto-form.is-hidden {
+  display: none;
+}
+.field-error {
+  font-size: 0.75rem;
+  color: #dc2626;
+  display: none;
+}
+.form-group.has-error input,
+.form-group.has-error textarea {
+  border-color: #dc2626;
+}
+.form-group.has-error .field-error {
+  display: block;
+}
+
+/* ===== Mobile fine-tuning ===== */
+@media (max-width: 640px) {
+  .hero-image-wrapper {
+    height: 360px;
+  }
+  .nosotros-image-col {
+    min-height: 320px;
+  }
+  .aplicaciones-image {
+    min-height: 320px;
+  }
+  .calidad-image-col {
+    height: 320px;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .h2-title {
+    font-size: 1.75rem;
+  }
+  .cap-value {
+    font-size: 4rem;
+  }
+  .section-padding {
+    padding: 56px 0;
+  }
+  .footer-status {
+    flex-wrap: wrap;
+  }
+  .header-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .stat-card {
+    padding: 20px;
+  }
+  .stat-value {
+    font-size: 2rem;
+  }
+}
