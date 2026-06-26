@@ -549,6 +549,7 @@
 .proceso-section {
     background-color: var(--color-bg-dark);
     color: var(--color-bg-white);
+    --proceso-navy: #1c3a5c;
   }
   .text-white {
     color: var(--color-bg-white);
@@ -566,31 +567,70 @@
   .proceso-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background-color: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.1);
+    gap: 24px;
   }
   .proceso-card {
-    background-color: var(--color-bg-dark);
-    padding: 40px;
+    background-color: var(--color-bg-white);
     display: flex;
     flex-direction: column;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.28);
   }
-  .proc-num {
-    font-size: 3rem;
-    font-weight: 300;
-    color: #374151;
-    margin-bottom: 40px;
+  .proceso-img-wrap {
+    position: relative;
+    height: 220px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .proceso-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .proc-num-badge {
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--proceso-navy);
+    border: 4px solid var(--color-bg-white);
+    color: var(--color-bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .proceso-card-body {
+    padding: 36px 24px 28px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .proc-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 600;
-    margin-bottom: 16px;
-    color: var(--color-bg-white);
+    margin-bottom: 12px;
+    color: var(--proceso-navy);
   }
   .proc-desc {
-    color: var(--color-text-light);
+    color: var(--color-text-secondary);
     font-size: 0.875rem;
+    margin-bottom: 24px;
+  }
+  .proc-icon-wrap {
+    margin-top: auto;
+    width: 32px;
+    height: 32px;
+    color: var(--proceso-navy);
+  }
+  .proc-icon-wrap svg {
+    width: 100%;
+    height: 100%;
   }
   @media (max-width: 1024px) {
     .proceso-header {
@@ -598,6 +638,7 @@
     }
     .proceso-grid {
       grid-template-columns: repeat(2, 1fr);
+      row-gap: 48px;
     }
   }
   @media (max-width: 640px) {
@@ -1185,24 +1226,72 @@
 
     <div class="proceso-grid">
       <div class="proceso-card">
-        <div class="proc-num">01</div>
-        <h3 class="proc-title">Briefing</h3>
-        <p class="proc-desc">Definición conjunta del producto, tamaño (60 / 120 ml) y características del aerosol deseado.</p>
+        <div class="proceso-img-wrap">
+          <img src="images/proceso-01.jpg" alt="Briefing del proyecto con cliente" class="proceso-img">
+          <div class="proc-num-badge">01</div>
+        </div>
+        <div class="proceso-card-body">
+          <h3 class="proc-title">Briefing</h3>
+          <p class="proc-desc">Definición conjunta del producto, tamaño (60 / 120 ml) y características del aerosol deseado.</p>
+          <div class="proc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-4 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle cx="8" cy="11" r="0.9" fill="currentColor"/>
+              <circle cx="12" cy="11" r="0.9" fill="currentColor"/>
+              <circle cx="16" cy="11" r="0.9" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
       </div>
       <div class="proceso-card">
-        <div class="proc-num">02</div>
-        <h3 class="proc-title">Pruebas</h3>
-        <p class="proc-desc">Validación de válvulas, propelente y concentrado. Iteración hasta lograr el disparo perfecto.</p>
+        <div class="proceso-img-wrap">
+          <img src="images/proceso-02.jpg" alt="Pruebas de laboratorio con concentrado" class="proceso-img">
+          <div class="proc-num-badge">02</div>
+        </div>
+        <div class="proceso-card-body">
+          <h3 class="proc-title">Pruebas</h3>
+          <p class="proc-desc">Validación de válvulas, propelente y concentrado. Iteración hasta lograr el disparo perfecto.</p>
+          <div class="proc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 3h4M10 3v6l-5.5 9a1.5 1.5 0 0 0 1.3 2.2h12.4a1.5 1.5 0 0 0 1.3-2.2L14 9V3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+              <path d="M7.5 15h9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
       </div>
       <div class="proceso-card">
-        <div class="proc-num">03</div>
-        <h3 class="proc-title">Producción</h3>
-        <p class="proc-desc">Llenado en aluminio con permiso COFEPRIS, bajo controles de calidad estrictos en cada lote.</p>
+        <div class="proceso-img-wrap">
+          <img src="images/proceso-03.jpg" alt="Línea de llenado en latas de aluminio" class="proceso-img">
+          <div class="proc-num-badge">03</div>
+        </div>
+        <div class="proceso-card-body">
+          <h3 class="proc-title">Producción</h3>
+          <p class="proc-desc">Llenado en aluminio con permiso COFEPRIS, bajo controles de calidad estrictos en cada lote.</p>
+          <div class="proc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M9 12.2l2 2 4-4.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
       </div>
       <div class="proceso-card">
-        <div class="proc-num">04</div>
-        <h3 class="proc-title">Entrega</h3>
-        <p class="proc-desc">Producto terminado listo para comercialización, con trazabilidad y documentación completa.</p>
+        <div class="proceso-img-wrap">
+          <img src="images/proceso-04.jpg" alt="Caja con producto terminado listo para entrega" class="proceso-img">
+          <div class="proc-num-badge">04</div>
+        </div>
+        <div class="proceso-card-body">
+          <h3 class="proc-title">Entrega</h3>
+          <p class="proc-desc">Producto terminado listo para comercialización, con trazabilidad y documentación completa.</p>
+          <div class="proc-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 7h11v9H2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M13 10h4l3 3v3h-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle cx="6" cy="18" r="1.6" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="16.5" cy="18" r="1.6" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </div>
