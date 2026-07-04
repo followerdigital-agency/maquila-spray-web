@@ -219,9 +219,9 @@
   .hero-image-side {
     position: relative;
     background-color: #ffffff;
-    background-image: url('images/hero-producto.png');
-    background-size: cover;
-    background-position: 70% center;
+    background-image: url('images/hero-producto.jpg');
+    background-size: contain;
+    background-position: center top;
     background-repeat: no-repeat;
     overflow: hidden;
     animation: heroSlideRight 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -317,7 +317,8 @@
     .hero-image-side { height: 420px; }
     .hero-product-img { object-position: center center; }
     .hero-image-side {
-      background-position: 70% top;
+      background-position: center top;
+      background-size: contain;
     }
     .hero-features-bar { grid-template-columns: repeat(2, 1fr); }
     .hero-feature-item { border-bottom: 1px solid rgba(255,255,255,0.07); padding: 24px 20px; }
@@ -1156,7 +1157,7 @@
 
     <!-- COLUMNA DERECHA: imagen ya preparada con óvalos y blob dorado incluidos -->
     <div class="hero-image-side">
-      <img src="images/hero-producto.png" alt="Producción de aerosoles Maquila Spray" class="hero-product-img">
+      <img src="images/hero-producto.jpg" alt="Producción de aerosoles Maquila Spray" class="hero-product-img">
     </div>
 
   </div>
