@@ -192,66 +192,17 @@
     color: var(--color-text-muted);
     line-height: 1.4;
   }
-  /* Columna derecha: imagen integrada sin borde rectangular */
+  /* Columna derecha: la imagen ya trae el oval, el arco dorado y el blob amber */
   .hero-image-side {
     position: relative;
-    background: #f4f6f8;
+    background-color: #ffffff;
+    background-image: url('images/hero-producto.png');
+    background-size: cover;
+    background-position: 30% center;
     overflow: hidden;
   }
-  /* Mancha dorada en esquina inferior derecha */
-  .hero-image-side::after {
-    content: '';
-    position: absolute;
-    bottom: -60px;
-    right: -40px;
-    width: 280px;
-    height: 220px;
-    background: radial-gradient(ellipse, rgba(245,158,11,0.35) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-  /* Óvalos decorativos concéntricos */
-  .hero-oval-dec {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 1;
-    top: 50%;
-    left: 42%;
-    transform: translate(-50%, -50%);
-  }
-  .hero-oval-1 {
-    width: 580px;
-    height: 480px;
-    border: 1px solid rgba(180, 165, 130, 0.3);
-  }
-  .hero-oval-2 {
-    width: 420px;
-    height: 350px;
-    border: 1px solid rgba(180, 165, 130, 0.2);
-    background: rgba(245, 243, 237, 0.25);
-  }
-  /* Punto dorado decorativo */
-  .hero-gold-dot {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    z-index: 2;
-    top: 52%;
-    left: calc(42% - 292px);
-    transform: translateY(-50%);
-    box-shadow: 0 0 0 4px rgba(245,158,11,0.2);
-  }
   .hero-product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-    position: relative;
-    z-index: 2;
+    display: none; /* la imagen se usa como background, no como tag */
   }
   /* Tarjeta flotante con esquinas redondeadas */
   .hero-floating-card {
@@ -337,9 +288,8 @@
     .hero-container { grid-template-columns: 1fr; min-height: auto; }
     .hero-content { padding: 100px 24px 52px; }
     .hero-title { font-size: 2.75rem; }
-    .hero-image-side { height: 400px; }
-    .hero-oval-1 { width: 380px; height: 320px; }
-    .hero-oval-2 { width: 280px; height: 240px; }
+    .hero-image-side { height: 420px; }
+    .hero-product-img { object-position: center center; }
     .hero-features-bar { grid-template-columns: repeat(2, 1fr); }
     .hero-feature-item { border-bottom: 1px solid rgba(255,255,255,0.07); padding: 24px 20px; }
     .hero-feature-item:nth-child(even) { border-right: none; }
@@ -1175,11 +1125,8 @@
 
     </div>
 
-    <!-- COLUMNA DERECHA: imagen con óvalos decorativos -->
+    <!-- COLUMNA DERECHA: imagen ya preparada con óvalos y blob dorado incluidos -->
     <div class="hero-image-side">
-      <div class="hero-oval-dec hero-oval-1"></div>
-      <div class="hero-oval-dec hero-oval-2"></div>
-      <div class="hero-gold-dot"></div>
       <img src="images/hero-producto.png" alt="Producción de aerosoles Maquila Spray" class="hero-product-img">
       <div class="hero-floating-card">
         <div class="floating-icon">
