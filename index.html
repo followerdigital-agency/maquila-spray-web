@@ -104,7 +104,7 @@
   .hero-container {
     display: grid;
     grid-template-columns: 55fr 45fr;
-    min-height: calc(100vh - 64px);
+    min-height: 560px;
     align-items: stretch;
   }
   @keyframes heroSlideUp {
@@ -220,8 +220,8 @@
     position: relative;
     background-color: #ffffff;
     background-image: url('images/hero-producto.jpg');
-    background-size: contain;
-    background-position: center top;
+    background-size: auto 100%;
+    background-position: 65% top;
     background-repeat: no-repeat;
     overflow: hidden;
     animation: heroSlideRight 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -317,8 +317,8 @@
     .hero-image-side { height: 420px; }
     .hero-product-img { object-position: center center; }
     .hero-image-side {
-      background-position: center top;
-      background-size: contain;
+      background-position: 65% top;
+      background-size: auto 100%;
     }
     .hero-features-bar { grid-template-columns: repeat(2, 1fr); }
     .hero-feature-item { border-bottom: 1px solid rgba(255,255,255,0.07); padding: 24px 20px; }
