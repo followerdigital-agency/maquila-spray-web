@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maquila Spray — Maquila y envasado de aerosoles en aluminio</title>
-  <meta name="description" content="Maquila Spray ofrece formulación y envasado (maquila completa) o solo envasado de aerosoles en latas de aluminio (60/120 ml), para marcas de cuidado personal y más. Permiso COFEPRIS vigente. Toluca, Estado de México.">
+  <meta name="description" content="Maquila Spray ofrece formulación y envasado (Maquila completa) o solo envasado de aerosoles en latas de aluminio (60/120 ml), para marcas de cuidado personal y más. Permiso COFEPRIS vigente. Toluca, Estado de México.">
   <link rel="icon" href="images/logo-maquila-spray.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -355,6 +355,34 @@
   }
   .mt-4 {
     margin-top: 20px;
+  }
+  .mt-2 {
+    margin-top: 10px;
+  }
+  .desc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .desc-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+  .desc-list li::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 7px;
   }
   .nosotros-grid {
     display: grid;
@@ -1121,7 +1149,7 @@
 
       <div class="hero-accent-bar"></div>
 
-      <p class="hero-desc">Convertimos tu idea en un aerosol de alta calidad. Desarrollamos fórmulas, envasamos en aerosol o realizamos únicamente la maquila y el empaque si ya cuentas con la fórmula. Tú decides, nosotros lo hacemos.</p>
+      <p class="hero-desc">Convertimos tu idea en un aerosol de alta calidad. Desarrollamos fórmulas, envasamos en aerosol o realizamos únicamente la Maquila y el empaque si ya cuentas con la fórmula. Tú decides, nosotros lo hacemos.</p>
 
       <div class="hero-actions">
         <a href="#contacto" class="btn-primary">
@@ -1234,7 +1262,11 @@
       </div>
       <div class="nosotros-desc-col">
         <p class="desc-text">En Maquila Spray somos socios estratégicos de marcas que buscan desarrollar o envasar su línea de aerosoles, con la confiabilidad y versatilidad que el mercado exige. Cada lote se ejecuta con dedicación artesanal y precisión industrial.</p>
-        <p class="desc-text mt-4">Trabajamos de dos formas: <strong>maquila completa</strong>, donde formulamos junto a usted de la mano de nuestro equipo químico; o <strong>solo envasado</strong>, si ya cuenta con su propia fórmula y prefiere mantenerla en total confidencialidad.</p>
+        <p class="desc-text mt-4">Soluciones flexibles según la etapa de tu producto:</p>
+        <ul class="desc-list mt-2">
+          <li><strong>Maquila completa:</strong> formulación, desarrollo y producción con acompañamiento de nuestro equipo químico.</li>
+          <li><strong>Solo envasado:</strong> para marcas con fórmula propia que buscan un proceso seguro, profesional y confidencial.</li>
+        </ul>
       </div>
     </div>
 
@@ -1283,7 +1315,12 @@
         <h2 class="h2-title">Envasado en aluminio,<br><span class="text-accent">en dos capacidades clave.</span></h2>
       </div>
       <div class="servicios-desc-col">
-        <p class="desc-text">Producimos exclusivamente en latas de aluminio. Una elección deliberada: acabado premium, mayor reciclabilidad y la presencia que las marcas de gama alta exigen en cada anaquel.</p>
+        <p class="desc-text">Producimos exclusivamente en latas de aluminio:</p>
+        <ul class="desc-list mt-2">
+          <li>Mayor reciclabilidad</li>
+          <li>Mejor presencia en anaquel</li>
+          <li>Ideal para marcas que buscan destacar</li>
+        </ul>
       </div>
     </div>
 
@@ -1513,7 +1550,7 @@
         </div>
         <div class="proceso-card-body">
           <h3 class="proc-title">Pruebas</h3>
-          <p class="proc-desc">Validación de válvulas, propelente y concentrado. Iteración hasta lograr el disparo perfecto.</p>
+          <p class="proc-desc">Validación de válvulas, propelente y concentrado. Múltiples pruebas hasta lograr el disparo perfecto.</p>
           <div class="proc-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 3h4M10 3v6l-5.5 9a1.5 1.5 0 0 0 1.3 2.2h12.4a1.5 1.5 0 0 0 1.3-2.2L14 9V3" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
