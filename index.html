@@ -357,7 +357,7 @@
     margin-top: 20px;
   }
   .mt-2 {
-    margin-top: 10px;
+    margin-top: 12px;
   }
   .desc-list {
     list-style: none;
@@ -365,24 +365,29 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
   .desc-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    position: relative;
+    padding-left: 18px;
     font-size: 0.9375rem;
     color: var(--color-text-secondary);
-    line-height: 1.6;
+    line-height: 1.65;
   }
   .desc-list li::before {
     content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
     width: 7px;
     height: 7px;
     border-radius: 50%;
     background-color: var(--color-accent);
     flex-shrink: 0;
-    margin-top: 7px;
+  }
+  .desc-list li strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
   }
   .nosotros-grid {
     display: grid;
